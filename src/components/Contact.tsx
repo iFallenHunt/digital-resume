@@ -4,7 +4,7 @@ import AnimatedText from "./AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -21,17 +21,15 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({
   content,
   delay = 0,
 }) => (
-  <AnimatedText text="" delay={delay}>
-    <div className="flex items-start mb-6">
-      <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-        {icon}
-      </div>
-      <div>
-        <h3 className="text-base font-medium">{title}</h3>
-        <div className="text-foreground/70 mt-1">{content}</div>
-      </div>
+  <div className="flex items-start mb-6 animate-fade-in" style={{ animationDelay: `${delay}ms` }}>
+    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
+      {icon}
     </div>
-  </AnimatedText>
+    <div>
+      <h3 className="text-base font-medium">{title}</h3>
+      <div className="text-foreground/70 mt-1">{content}</div>
+    </div>
+  </div>
 );
 
 const Contact: React.FC = () => {
@@ -90,10 +88,10 @@ const Contact: React.FC = () => {
               title="Email"
               content={
                 <a
-                  href="mailto:seuemail@exemplo.com"
+                  href="mailto:lukas_santos.silva@hotmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  seuemail@exemplo.com
+                  lukas_santos.silva@hotmail.com
                 </a>
               }
               delay={200}
@@ -102,42 +100,40 @@ const Contact: React.FC = () => {
             <ContactInfoItem
               icon={<Phone size={24} />}
               title="Telefone"
-              content="+55 (11) 98765-4321"
+              content="+55 (16) 9 8108-0083"
               delay={300}
             />
 
             <ContactInfoItem
               icon={<MapPin size={24} />}
               title="Localização"
-              content="São Paulo, SP - Brasil"
+              content="Campinas, SP, Brasil"
               delay={400}
             />
 
-            <AnimatedText text="" delay={500}>
-              <div className="mt-10">
-                <h3 className="text-base font-medium mb-4">Me siga nas redes</h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-foreground text-background hover:bg-primary transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-foreground text-background hover:bg-primary transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                </div>
+            <div className="mt-10 animate-fade-in" style={{ animationDelay: '500ms' }}>
+              <h3 className="text-base font-medium mb-4">Me siga nas redes</h3>
+              <div className="flex space-x-4">
+                <a
+                  href="https://github.com/iFallenHunt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-foreground text-background hover:bg-primary transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/santos-lucas96dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-foreground text-background hover:bg-primary transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
               </div>
-            </AnimatedText>
+            </div>
           </div>
 
           <div className="glass-card p-8">
@@ -149,76 +145,70 @@ const Contact: React.FC = () => {
 
             <form onSubmit={handleSubmit}>
               <div className="space-y-5">
-                <AnimatedText text="" delay={200}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nome
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Seu nome"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="bg-white/50"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Seu email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="bg-white/50"
-                      />
-                    </div>
-                  </div>
-                </AnimatedText>
-
-                <AnimatedText text="" delay={300}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 animate-fade-in" style={{ animationDelay: '200ms' }}>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Assunto
+                    <label htmlFor="name" className="text-sm font-medium">
+                      Nome
                     </label>
                     <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="Assunto da mensagem"
-                      value={formData.subject}
+                      id="name"
+                      name="name"
+                      placeholder="Seu nome"
+                      value={formData.name}
                       onChange={handleChange}
                       required
                       className="bg-white/50"
                     />
                   </div>
-                </AnimatedText>
-
-                <AnimatedText text="" delay={400}>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Mensagem
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Email
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Sua mensagem"
-                      rows={5}
-                      value={formData.message}
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="Seu email"
+                      value={formData.email}
                       onChange={handleChange}
                       required
                       className="bg-white/50"
                     />
                   </div>
-                </AnimatedText>
+                </div>
 
-                <AnimatedText text="" delay={500}>
+                <div className="space-y-2 animate-fade-in" style={{ animationDelay: '300ms' }}>
+                  <label htmlFor="subject" className="text-sm font-medium">
+                    Assunto
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Assunto da mensagem"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="bg-white/50"
+                  />
+                </div>
+
+                <div className="space-y-2 animate-fade-in" style={{ animationDelay: '400ms' }}>
+                  <label htmlFor="message" className="text-sm font-medium">
+                    Mensagem
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Sua mensagem"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="bg-white/50"
+                  />
+                </div>
+
+                <div className="animate-fade-in" style={{ animationDelay: '500ms' }}>
                   <Button
                     type="submit"
                     className="w-full"
@@ -232,7 +222,7 @@ const Contact: React.FC = () => {
                       </>
                     )}
                   </Button>
-                </AnimatedText>
+                </div>
               </div>
             </form>
           </div>

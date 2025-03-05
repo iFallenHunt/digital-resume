@@ -8,7 +8,7 @@ interface ExperienceItemProps {
   title: string;
   company: string;
   period: string;
-  description: string;
+  description: string[];
   companyUrl?: string;
   className?: string;
   delay?: number;
@@ -24,36 +24,38 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   delay = 0,
 }) => {
   return (
-    <AnimatedText text="" delay={delay}>
-      <div className={cn("timeline-card", className)}>
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-          <div>
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <div className="flex items-center text-primary mt-1">
-              <Briefcase size={16} className="mr-2" />
-              {companyUrl ? (
-                <a 
-                  href={companyUrl} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:underline"
-                >
-                  {company}
-                  <ExternalLink size={14} className="ml-1" />
-                </a>
-              ) : (
-                <span>{company}</span>
-              )}
-            </div>
-          </div>
-          <div className="flex items-center text-muted-foreground mt-2 md:mt-0">
-            <Calendar size={16} className="mr-2" />
-            <span>{period}</span>
+    <div className={cn("timeline-card animate-fade-in", className)} style={{ animationDelay: `${delay}ms` }}>
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+        <div>
+          <h3 className="text-xl font-semibold">{title}</h3>
+          <div className="flex items-center text-primary mt-1">
+            <Briefcase size={16} className="mr-2" />
+            {companyUrl ? (
+              <a 
+                href={companyUrl} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:underline"
+              >
+                {company}
+                <ExternalLink size={14} className="ml-1" />
+              </a>
+            ) : (
+              <span>{company}</span>
+            )}
           </div>
         </div>
-        <p className="text-foreground/80">{description}</p>
+        <div className="flex items-center text-muted-foreground mt-2 md:mt-0">
+          <Calendar size={16} className="mr-2" />
+          <span>{period}</span>
+        </div>
       </div>
-    </AnimatedText>
+      <ul className="text-foreground/80 list-disc pl-5 space-y-1">
+        {description.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
@@ -72,39 +74,84 @@ const Experience: React.FC = () => {
 
           <div className="space-y-10 relative">
             <ExperienceItem
-              title="Desenvolvedor Front-end Sênior"
-              company="TechInnovate"
-              companyUrl="https://example.com"
-              period="Jan 2022 - Presente"
-              description="Lidero o desenvolvimento front-end de aplicações web, utilizando React, TypeScript e Tailwind CSS. Implementei melhorias de performance que reduziram o tempo de carregamento em 40% e coordeno um time de 3 desenvolvedores."
+              title="Desenvolvedor Full Stack"
+              company="IT Brasil"
+              period="Dez 2024 – Fev 2025"
+              description={[
+                "Desenvolvimento de software",
+                "Python, HTML, CSS, JavaScript, Docker, Github",
+                "Comunicação com Stakeholders",
+                "Coordenação de Times Ágeis",
+                "Desenvolvimento e Revisão de Código",
+                "Suporte de Infraestrutura em Cloud",
+                "Análise e Otimização de Banco de Dados",
+                "Garantia de Qualidade e Integração Contínua"
+              ]}
               delay={100}
             />
 
             <ExperienceItem
-              title="Desenvolvedor Front-end Pleno"
-              company="WebSolutions"
-              companyUrl="https://example.com"
-              period="Mar 2020 - Dez 2021"
-              description="Desenvolvi interfaces responsivas e acessíveis para diversos clientes. Fui responsável pela migração de uma aplicação legada para React, melhorando significativamente a usabilidade e manutenibilidade do código."
+              title="Desenvolvedor/Product Owner"
+              company="Empresa Não Especificada"
+              period="Jun 2024 – Dez 2024"
+              description={[
+                "Desenvolvimento de software",
+                "Python, HTML, CSS, JavaScript",
+                "Suporte N3",
+                "Metodologia Ágil",
+                "Suporte a Aplicação SAAS",
+                "Banco de Dados",
+                "Suporte a infraestrutura de nuvem"
+              ]}
               delay={300}
             />
 
             <ExperienceItem
-              title="Desenvolvedor Front-end Júnior"
-              company="Digital Agency"
-              companyUrl="https://example.com"
-              period="Jun 2018 - Fev 2020"
-              description="Trabalhei em projetos de desenvolvimento web focados em UI/UX, utilizando HTML, CSS, JavaScript e React. Colaborei com designers para implementar interfaces fiéis aos protótipos."
+              title="Analista de Suporte Sênior"
+              company="Mercedes-Benz"
+              period="Out 2022 – Jun 2024"
+              description={[
+                "Análise de banco de dados",
+                "Troubleshooting em aplicações Java e Python",
+                "Administração de servidores",
+                "Monitoramento de performance e KPIs",
+                "Programação de rotina",
+                "Backup",
+                "Segurança de acesso",
+                "Power BI"
+              ]}
               delay={500}
             />
 
             <ExperienceItem
-              title="Estagiário de Desenvolvimento"
-              company="StartupTech"
-              companyUrl="https://example.com"
-              period="Jan 2017 - Mai 2018"
-              description="Auxiliei no desenvolvimento de websites e aplicações web, realizando tarefas de front-end e back-end básico. Participei de reuniões com clientes e aprendi sobre o ciclo completo de desenvolvimento."
+              title="Analista de Sistemas"
+              company="Sópneus"
+              period="Mar 2022 - Jul 2022"
+              description={[
+                "Realização de atividades rotineiras em servidores em nuvem",
+                "Troubleshooting em aplicações C# e Python",
+                "Identificação de bugs no ERP Sankhya",
+                "Banco de dados Oracle Cloud",
+                "Manutenção rotineira de hardware",
+                "Helpdesk",
+                "Criação de metodologias e documentação"
+              ]}
               delay={700}
+            />
+
+            <ExperienceItem
+              title="Analista de Sistemas"
+              company="Visual Modas"
+              period="Jun 2020 - Mar 2022"
+              description={[
+                "Realização de atividades rotineiras em servidores físicos e em nuvem",
+                "Troubleshooting em aplicações C# e Python",
+                "Identificação de bugs no ERP Sankhya",
+                "Banco de dados Oracle físico e Cloud",
+                "Helpdesk",
+                "Criação de metodologias e documentação"
+              ]}
+              delay={900}
             />
           </div>
         </div>

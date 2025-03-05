@@ -1,13 +1,13 @@
 
 import React from "react";
-import { BookOpen, Briefcase, Coffee, Heart, Map, User } from "lucide-react";
+import { BookOpen, Briefcase, Coffee, Heart, Map, User, Mail, Phone, Globe, Github, Linkedin } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { cn } from "@/lib/utils";
 
 interface InfoCardProps {
   icon: React.ReactNode;
   title: string;
-  content: string;
+  content: string | React.ReactNode;
   className?: string;
 }
 
@@ -28,7 +28,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         {icon}
       </div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-foreground/70">{content}</p>
+      <div className="text-foreground/70">{content}</div>
     </div>
   );
 };
@@ -44,77 +44,84 @@ const About: React.FC = () => {
 
         <div className="max-w-3xl mx-auto mt-8 mb-16">
           <AnimatedText
-            text="Sou um desenvolvedor web apaixonado por criar interfaces modernas e funcionais. Com experiência em React, TypeScript e design responsivo, meu objetivo é construir aplicações que combinam estética e usabilidade."
+            text="Sou apaixonado por tecnologia e por transformar ideias em soluções práticas e eficientes. Profissional com mais de 10 anos de experiência em TI, tenho formação sólida em análise de sistemas e engenharia de software. Minha especialidade é o desenvolvimento de software em Java, Python e Javascript, com uma boa dose de Git, SQL e conhecimento robusto em Cloud Computing e APIs RESTful."
             className="text-center text-lg text-foreground/80"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatedText
-            text=""
-            delay={100}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '100ms' }}>
             <InfoCard
               icon={<User size={24} />}
               title="Informações Pessoais"
-              content="28 anos, Brasileiro, Disponível para projetos freelance e oportunidades full-time."
+              content="Lucas Santos, Desenvolvedor Full Stack com mais de 10 anos de experiência em TI."
             />
-          </AnimatedText>
+          </div>
 
-          <AnimatedText
-            text=""
-            delay={200}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
             <InfoCard
               icon={<Map size={24} />}
               title="Localização"
-              content="São Paulo, Brasil - Disponível para trabalho remoto em qualquer lugar do mundo."
+              content="Campinas, SP, Brasil - Disponível para trabalho híbrido ou remoto."
             />
-          </AnimatedText>
+          </div>
 
-          <AnimatedText
-            text=""
-            delay={300}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
             <InfoCard
-              icon={<Briefcase size={24} />}
-              title="Experiência"
-              content="5+ anos em desenvolvimento web, especializado em React, TypeScript e UI/UX."
+              icon={<Phone size={24} />}
+              title="Telefone"
+              content="+55 (16) 9 8108-0083"
             />
-          </AnimatedText>
+          </div>
 
-          <AnimatedText
-            text=""
-            delay={400}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
             <InfoCard
-              icon={<BookOpen size={24} />}
-              title="Formação"
-              content="Bacharelado em Ciência da Computação, com diversas certificações em desenvolvimento web."
+              icon={<Mail size={24} />}
+              title="Email"
+              content={
+                <a
+                  href="mailto:lukas_santos.silva@hotmail.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  lukas_santos.silva@hotmail.com
+                </a>
+              }
             />
-          </AnimatedText>
+          </div>
 
-          <AnimatedText
-            text=""
-            delay={500}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '500ms' }}>
             <InfoCard
-              icon={<Heart size={24} />}
-              title="Interesses"
-              content="UI/UX Design, Tecnologias Front-end, Acessibilidade, Inteligência Artificial."
+              icon={<Linkedin size={24} />}
+              title="LinkedIn"
+              content={
+                <a
+                  href="https://www.linkedin.com/in/santos-lucas96dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  santos-lucas96dev
+                </a>
+              }
             />
-          </AnimatedText>
+          </div>
 
-          <AnimatedText
-            text=""
-            delay={600}
-          >
+          <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
             <InfoCard
-              icon={<Coffee size={24} />}
-              title="Hobbies"
-              content="Fotografia, Leitura, Música, Hiking, Aprender novas tecnologias."
+              icon={<Github size={24} />}
+              title="GitHub"
+              content={
+                <a
+                  href="https://github.com/iFallenHunt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  iFallenHunt
+                </a>
+              }
             />
-          </AnimatedText>
+          </div>
         </div>
       </div>
     </section>

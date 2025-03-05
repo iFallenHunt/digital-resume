@@ -12,59 +12,56 @@ interface SkillCategory {
 const Skills: React.FC = () => {
   const skillCategories: SkillCategory[] = [
     {
-      name: "Front-end",
+      name: "Linguagens & Frameworks",
       skills: [
-        { name: "HTML & CSS", level: 95 },
         { name: "JavaScript", level: 90 },
-        { name: "React", level: 85 },
-        { name: "TypeScript", level: 80 },
-        { name: "Tailwind CSS", level: 90 }
+        { name: "Java", level: 85 },
+        { name: "Python", level: 85 },
+        { name: "Golang", level: 75 },
+        { name: "React", level: 80 },
+        { name: "TypeScript", level: 80 }
       ],
     },
     {
-      name: "Back-end",
+      name: "Cloud & DevOps",
       skills: [
-        { name: "Node.js", level: 75 },
-        { name: "Express", level: 70 },
-        { name: "MongoDB", level: 65 },
-        { name: "Firebase", level: 80 },
-        { name: "REST APIs", level: 85 }
+        { name: "AWS", level: 85 },
+        { name: "Azure", level: 80 },
+        { name: "Google Cloud", level: 75 },
+        { name: "Docker", level: 85 },
+        { name: "Github", level: 90 }
       ],
     },
     {
-      name: "Outros",
+      name: "Banco de Dados & Outros",
       skills: [
-        { name: "UI/UX Design", level: 80 },
-        { name: "Git & GitHub", level: 85 },
-        { name: "Responsividade", level: 95 },
-        { name: "Acessibilidade", level: 75 },
-        { name: "SEO", level: 70 }
+        { name: "MySQL", level: 85 },
+        { name: "PostgreSQL", level: 80 },
+        { name: "MariaDB", level: 80 },
+        { name: "Apache/Nginx", level: 75 },
+        { name: "Supabase/Vercel", level: 80 }
       ],
     },
   ];
 
   const technologies = [
-    "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", 
-    "Node.js", "Express", "MongoDB", "Firebase", "Git", "GitHub",
-    "Figma", "Responsive Design", "REST APIs", "GraphQL", "NextJS", "Redux"
+    "JavaScript", "Java", "Python", "Golang", "React", "TypeScript", 
+    "AWS", "Azure", "Google Cloud", "Ubuntu", "CentOS", "Windows", "Mac OS",
+    "MySQL", "MariaDB", "PostgreSQL", "Docker", "Github", "Supabase", "Vercel",
+    "Apache", "Nginx", "RESTful APIs", "Cloud Computing"
   ];
 
   return (
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedText
-          text="Minhas Habilidades"
+          text="Áreas de Conhecimento"
           className="section-heading"
         />
         
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
           {skillCategories.map((category, index) => (
-            <AnimatedText
-              key={category.name}
-              text=""
-              className="glass-card p-6"
-              delay={200 * index}
-            >
+            <div key={category.name} className="glass-card p-6 animate-fade-in" style={{ animationDelay: `${200 * index}ms` }}>
               <h3 className="text-xl font-display font-semibold mb-6 text-center">
                 {category.name}
               </h3>
@@ -76,7 +73,7 @@ const Skills: React.FC = () => {
                   percentage={skill.level}
                 />
               ))}
-            </AnimatedText>
+            </div>
           ))}
         </div>
         
@@ -90,15 +87,11 @@ const Skills: React.FC = () => {
           
           <div className="flex flex-wrap justify-center gap-3">
             {technologies.map((tech, index) => (
-              <AnimatedText
-                key={tech}
-                text=""
-                delay={50 * index}
-              >
+              <div key={tech} className="animate-fade-in" style={{ animationDelay: `${50 * index}ms` }}>
                 <span className="skill-tag">
                   {tech}
                 </span>
-              </AnimatedText>
+              </div>
             ))}
           </div>
         </div>

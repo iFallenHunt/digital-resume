@@ -1,15 +1,16 @@
 
 import React from "react";
 import AnimatedText from "./AnimatedText";
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface EducationItemProps {
   degree: string;
   institution: string;
-  location: string;
+  location?: string;
   period: string;
-  description: string;
+  description?: string;
+  certificateUrl?: string;
   className?: string;
   delay?: number;
 }
@@ -20,32 +21,43 @@ const EducationItem: React.FC<EducationItemProps> = ({
   location,
   period,
   description,
+  certificateUrl,
   className,
   delay = 0,
 }) => {
   return (
-    <AnimatedText text="" delay={delay}>
-      <div className={cn("timeline-card", className)}>
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-          <div>
-            <h3 className="text-xl font-semibold">{degree}</h3>
-            <div className="flex items-center text-primary mt-1">
-              <GraduationCap size={16} className="mr-2" />
-              <span>{institution}</span>
-            </div>
+    <div className={cn("timeline-card animate-fade-in", className)} style={{ animationDelay: `${delay}ms` }}>
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+        <div>
+          <h3 className="text-xl font-semibold">{degree}</h3>
+          <div className="flex items-center text-primary mt-1">
+            <GraduationCap size={16} className="mr-2" />
+            <span>{institution}</span>
+          </div>
+          {location && (
             <div className="flex items-center text-muted-foreground mt-1">
               <MapPin size={14} className="mr-2" />
               <span>{location}</span>
             </div>
-          </div>
-          <div className="flex items-center text-muted-foreground mt-2 md:mt-0">
-            <Calendar size={16} className="mr-2" />
-            <span>{period}</span>
-          </div>
+          )}
         </div>
-        <p className="text-foreground/80">{description}</p>
+        <div className="flex items-center text-muted-foreground mt-2 md:mt-0">
+          <Calendar size={16} className="mr-2" />
+          <span>{period}</span>
+        </div>
       </div>
-    </AnimatedText>
+      {description && <p className="text-foreground/80">{description}</p>}
+      {certificateUrl && (
+        <a 
+          href={certificateUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-primary hover:underline mt-2"
+        >
+          Ver certificado <ExternalLink size={14} className="ml-1" />
+        </a>
+      )}
+    </div>
   );
 };
 
@@ -64,41 +76,56 @@ const Education: React.FC = () => {
 
           <div className="space-y-10 relative">
             <EducationItem
-              degree="Mestrado em Ciência da Computação"
-              institution="Universidade Federal do Brasil"
-              location="São Paulo, Brasil"
-              period="2020 - 2022"
-              description="Especialização em Inteligência Artificial e Desenvolvimento Web Avançado. Dissertação sobre 'Otimização de Performance em Aplicações React'."
+              degree="Bacharelado, Engenharia de Software"
+              institution="UNICESUMAR"
+              period="2024 - 2026"
               delay={100}
             />
 
             <EducationItem
-              degree="Bacharelado em Ciência da Computação"
-              institution="Universidade Estadual de Tecnologia"
-              location="Rio de Janeiro, Brasil"
-              period="2016 - 2019"
-              description="Currículo focado em desenvolvimento de software, estruturas de dados, algoritmos e engenharia de software. Participação em projetos de pesquisa e extensão."
+              degree="Bacharelado, Análise e Desenvolvimento de Sistemas"
+              institution="UNICESUMAR"
+              period="2021 - 2024"
               delay={300}
             />
 
             <EducationItem
-              degree="Intercâmbio Acadêmico"
-              institution="Technical University"
-              location="Berlim, Alemanha"
-              period="2018 (6 meses)"
-              description="Programa de intercâmbio focado em tecnologias emergentes para desenvolvimento web. Participação em workshop internacional de inovação digital."
+              degree="Certificado, CS50's Introduction to Computer Science"
+              institution="HarvardX"
+              period="2024"
               delay={500}
             />
 
             <EducationItem
-              degree="Técnico em Informática"
-              institution="Instituto Técnico de Tecnologia"
-              location="São Paulo, Brasil"
-              period="2014 - 2015"
-              description="Formação técnica em desenvolvimento de sistemas, redes e infraestrutura de TI. Projeto final de desenvolvimento de sistema para gestão escolar."
+              degree="Certificado, Cloud Upper AWS"
+              institution="Cloud Treinamentos"
+              period="2022"
               delay={700}
             />
+
+            <EducationItem
+              degree="Certificado, Desenvolvimento em Java"
+              institution="Rocketseat"
+              period="2023 - 2024"
+              delay={900}
+            />
+
+            <EducationItem
+              degree="Bootcamp, Backend com Java"
+              institution="DIO"
+              period="2024"
+              delay={1100}
+            />
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <a 
+            href="#"
+            className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors"
+          >
+            Acessar meus Certificados <ExternalLink size={16} className="ml-2" />
+          </a>
         </div>
       </div>
     </section>

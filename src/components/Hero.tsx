@@ -31,31 +31,31 @@ const Hero: React.FC = () => {
               
               <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl">
                 <AnimatedText
-                  text="Seu Nome"
+                  text="Lucas Santos"
                   className="block animate-shimmer"
                   delay={400}
                 />
                 <AnimatedText
-                  text="Desenvolvedor Web"
+                  text="Desenvolvedor Full Stack"
                   className="block text-2xl md:text-3xl lg:text-4xl mt-2 text-secondary"
                   delay={600}
                 />
               </h1>
               
               <AnimatedText
-                text="Transformando ideias em experiências digitais excepcionais. Especializado em desenvolvimento front-end com foco em interfaces modernas e intuitivas."
+                text="Transformando ideias em soluções práticas e eficientes. Especializado em Java, Python e JavaScript com foco em desenvolvimento de software e Cloud Computing."
                 className="max-w-2xl text-lg text-foreground/70"
                 delay={800}
               />
               
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                <AnimatedText delay={1000} text="">
+                <div className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
                   <Button size="lg" className="rounded-full px-8">
                     Baixar CV
                   </Button>
-                </AnimatedText>
+                </div>
                 
-                <AnimatedText delay={1200} text="">
+                <div className="animate-fade-in" style={{ animationDelay: '1200ms' }}>
                   <a href="#contact">
                     <Button
                       variant="outline"
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
                       Contato
                     </Button>
                   </a>
-                </AnimatedText>
+                </div>
               </div>
             </div>
           </div>
@@ -76,9 +76,9 @@ const Hero: React.FC = () => {
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-sm" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white/50 shadow-xl animate-float">
-                  {/* Placeholder for profile image - replace with your own */}
+                  {/* Placeholder for profile image - using initials */}
                   <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-5xl font-bold">
-                    SN
+                    LS
                   </div>
                 </div>
               </div>

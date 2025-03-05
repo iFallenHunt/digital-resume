@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import Languages from "@/components/Languages";
 import Contact from "@/components/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -46,15 +47,16 @@ const Index = () => {
         <Skills />
         <Experience />
         <Education />
+        <Languages />
         <Contact />
       </main>
       <footer className="py-8 bg-secondary text-white text-center">
         <div className="container mx-auto px-4">
           <p>
-            © {new Date().getFullYear()} - CV Interativo. Todos os direitos reservados.
+            © {new Date().getFullYear()} - Lucas Santos. Todos os direitos reservados.
           </p>
           <p className="text-white/70 text-sm mt-1">
-            Desenvolvido com ❤️ e muitas xícaras de café
+            Desenvolvedor Full Stack
           </p>
         </div>
       </footer>
