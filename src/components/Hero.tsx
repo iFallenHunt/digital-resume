@@ -76,10 +76,12 @@ const Hero: React.FC = () => {
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-sm" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white/50 shadow-xl animate-float">
-                  {/* Placeholder for profile image - using initials */}
-                  <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-5xl font-bold">
-                    LS
-                  </div>
+                  {/* Profile image */}
+                  <img 
+                    src="/lovable-uploads/6ee29a52-479e-4d61-be25-988ad6412a4b.png" 
+                    alt="Lucas Santos" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
