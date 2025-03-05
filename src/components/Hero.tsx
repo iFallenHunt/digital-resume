@@ -3,8 +3,12 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
 
 const Hero: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
     <section
       id="home"
@@ -23,7 +27,7 @@ const Hero: React.FC = () => {
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-block">
                 <AnimatedText
-                  text="Olá, eu sou"
+                  text={language === "pt-BR" ? "Olá, eu sou" : "Hello, I am"}
                   className="text-xl text-foreground/80 mb-1"
                   delay={200}
                 />
@@ -36,14 +40,16 @@ const Hero: React.FC = () => {
                   delay={400}
                 />
                 <AnimatedText
-                  text="Desenvolvedor Full Stack"
+                  text={getTranslation("fullStackDev", language)}
                   className="block text-2xl md:text-3xl lg:text-4xl mt-2 text-secondary"
                   delay={600}
                 />
               </h1>
               
               <AnimatedText
-                text="Transformando ideias em soluções práticas e eficientes. Especializado em Java, Python e JavaScript com foco em desenvolvimento de software e Cloud Computing."
+                text={language === "pt-BR" 
+                  ? "Transformando ideias em soluções práticas e eficientes. Especializado em Java, Python e JavaScript com foco em desenvolvimento de software e Cloud Computing."
+                  : "Transforming ideas into practical and efficient solutions. Specialized in Java, Python, and JavaScript with a focus on software development and Cloud Computing."}
                 className="max-w-2xl text-lg text-foreground/70"
                 delay={800}
               />
@@ -51,7 +57,7 @@ const Hero: React.FC = () => {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
                 <div className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
                   <Button size="lg" className="rounded-full px-8">
-                    Baixar CV
+                    {getTranslation("downloadCV", language)}
                   </Button>
                 </div>
                 
@@ -62,7 +68,7 @@ const Hero: React.FC = () => {
                       size="lg"
                       className="rounded-full px-8"
                     >
-                      Contato
+                      {getTranslation("contact", language)}
                     </Button>
                   </a>
                 </div>
@@ -92,7 +98,7 @@ const Hero: React.FC = () => {
       <a
         href="#about"
         className="scroll-indicator"
-        aria-label="Rolar para baixo"
+        aria-label={language === "pt-BR" ? "Rolar para baixo" : "Scroll down"}
       >
         <ChevronDown size={30} />
       </a>

@@ -9,8 +9,11 @@ import Education from "@/components/Education";
 import Languages from "@/components/Languages";
 import Contact from "@/components/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Index = () => {
+  const { language } = useLanguage();
+
   useEffect(() => {
     // Animation on scroll logic
     const animateOnScroll = () => {
@@ -53,10 +56,10 @@ const Index = () => {
       <footer className="py-8 bg-secondary text-white text-center">
         <div className="container mx-auto px-4">
           <p>
-            © {new Date().getFullYear()} - Lucas Santos. Todos os direitos reservados.
+            © {new Date().getFullYear()} - Lucas Santos. {language === "pt-BR" ? "Todos os direitos reservados." : "All rights reserved."}
           </p>
           <p className="text-white/70 text-sm mt-1">
-            Desenvolvedor Full Stack
+            {language === "pt-BR" ? "Desenvolvedor Full Stack" : "Full Stack Developer"}
           </p>
         </div>
       </footer>

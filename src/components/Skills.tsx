@@ -3,6 +3,8 @@ import React from "react";
 import ProgressBar from "./ProgressBar";
 import AnimatedText from "./AnimatedText";
 import { Separator } from "@/components/ui/separator";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
 
 interface SkillCategory {
   name: string;
@@ -10,9 +12,11 @@ interface SkillCategory {
 }
 
 const Skills: React.FC = () => {
+  const { language } = useLanguage();
+
   const skillCategories: SkillCategory[] = [
     {
-      name: "Linguagens & Frameworks",
+      name: getTranslation("languagesFrameworks", language),
       skills: [
         { name: "JavaScript", level: 90 },
         { name: "Java", level: 85 },
@@ -23,7 +27,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "Cloud & DevOps",
+      name: getTranslation("cloudDevOps", language),
       skills: [
         { name: "AWS", level: 85 },
         { name: "Azure", level: 80 },
@@ -33,7 +37,7 @@ const Skills: React.FC = () => {
       ],
     },
     {
-      name: "Banco de Dados & Outros",
+      name: getTranslation("databasesOthers", language),
       skills: [
         { name: "MySQL", level: 85 },
         { name: "PostgreSQL", level: 80 },
@@ -55,7 +59,7 @@ const Skills: React.FC = () => {
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedText
-          text="Áreas de Conhecimento"
+          text={getTranslation("skillsAreas", language)}
           className="section-heading"
         />
         
@@ -81,7 +85,7 @@ const Skills: React.FC = () => {
         
         <div className="mt-12">
           <AnimatedText
-            text="Tecnologias & Ferramentas"
+            text={getTranslation("technologiesTools", language)}
             className="text-2xl font-display font-semibold mb-8 text-center"
           />
           

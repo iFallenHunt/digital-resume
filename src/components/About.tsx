@@ -3,6 +3,8 @@ import React from "react";
 import { BookOpen, Briefcase, Coffee, Heart, Map, User, Mail, Phone, Globe, Github, Linkedin } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
 
 interface InfoCardProps {
   icon: React.ReactNode;
@@ -34,17 +36,19 @@ const InfoCard: React.FC<InfoCardProps> = ({
 };
 
 const About: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
     <section id="about" className="py-20 bg-section-pattern">
       <div className="container mx-auto px-4">
         <AnimatedText
-          text="Sobre Mim"
+          text={getTranslation("aboutMe", language)}
           className="section-heading"
         />
 
         <div className="max-w-3xl mx-auto mt-8 mb-16">
           <AnimatedText
-            text="Sou apaixonado por tecnologia e por transformar ideias em soluções práticas e eficientes. Profissional com mais de 10 anos de experiência em TI, tenho formação sólida em análise de sistemas e engenharia de software. Minha especialidade é o desenvolvimento de software em Java, Python e Javascript, com uma boa dose de Git, SQL e conhecimento robusto em Cloud Computing e APIs RESTful."
+            text={getTranslation("aboutDescription", language)}
             className="text-center text-lg text-foreground/80"
           />
         </div>
@@ -53,23 +57,23 @@ const About: React.FC = () => {
           <div className="animate-fade-in" style={{ animationDelay: '100ms' }}>
             <InfoCard
               icon={<User size={24} />}
-              title="Informações Pessoais"
-              content="Lucas Santos, Desenvolvedor Full Stack com mais de 10 anos de experiência em TI."
+              title={getTranslation("personalInfo", language)}
+              content={`Lucas Santos, ${getTranslation("fullStackDev", language)} ${language === "pt-BR" ? "com mais de 10 anos de experiência em TI." : "with over 10 years of IT experience."}`}
             />
           </div>
 
           <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
             <InfoCard
               icon={<Map size={24} />}
-              title="Localização"
-              content="Campinas, SP, Brasil - Disponível para trabalho híbrido ou remoto."
+              title={getTranslation("location", language)}
+              content={`Campinas, SP, Brasil - ${getTranslation("hybridRemote", language)}`}
             />
           </div>
 
           <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
             <InfoCard
               icon={<Phone size={24} />}
-              title="Telefone"
+              title={getTranslation("phone", language)}
               content="+55 (16) 9 8108-0083"
             />
           </div>
@@ -77,7 +81,7 @@ const About: React.FC = () => {
           <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
             <InfoCard
               icon={<Mail size={24} />}
-              title="Email"
+              title={getTranslation("email", language)}
               content={
                 <a
                   href="mailto:lukas_santos.silva@hotmail.com"
@@ -92,7 +96,7 @@ const About: React.FC = () => {
           <div className="animate-fade-in" style={{ animationDelay: '500ms' }}>
             <InfoCard
               icon={<Linkedin size={24} />}
-              title="LinkedIn"
+              title={getTranslation("linkedin", language)}
               content={
                 <a
                   href="https://www.linkedin.com/in/santos-lucas96dev/"
@@ -109,7 +113,7 @@ const About: React.FC = () => {
           <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
             <InfoCard
               icon={<Github size={24} />}
-              title="GitHub"
+              title={getTranslation("github", language)}
               content={
                 <a
                   href="https://github.com/iFallenHunt"

@@ -4,20 +4,24 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const isMobile = useIsMobile();
+  const { language } = useLanguage();
 
   const navItems = [
-    { id: "home", label: "Início" },
-    { id: "about", label: "Sobre" },
-    { id: "skills", label: "Habilidades" },
-    { id: "experience", label: "Experiência" },
-    { id: "education", label: "Formação" },
-    { id: "contact", label: "Contato" }
+    { id: "home", label: getTranslation("home", language) },
+    { id: "about", label: getTranslation("about", language) },
+    { id: "skills", label: getTranslation("skills", language) },
+    { id: "experience", label: getTranslation("experience", language) },
+    { id: "education", label: getTranslation("education", language) },
+    { id: "contact", label: getTranslation("contact", language) }
   ];
 
   const toggleMenu = () => {
@@ -92,12 +96,14 @@ const Header: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <div className="ml-6">
+            <div className="ml-6 flex items-center gap-3">
+              <LanguageToggle />
               <ThemeToggle />
             </div>
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
+            <LanguageToggle />
             <ThemeToggle />
             {/* Mobile Menu Button */}
             <button
