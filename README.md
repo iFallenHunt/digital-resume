@@ -1,69 +1,108 @@
-# Welcome to your Lovable project
+# Interactive Resume
 
-## Project info
+## About the Project
 
-**URL**: https://lovable.dev/projects/9182a85c-a5dd-48c5-8ec1-2014221513d4
+This is an interactive resume project developed with modern technologies to provide a unique professional information viewing experience.
 
-## How can I edit this code?
+## Technologies Used
 
-There are several ways of editing your application.
+- **TypeScript** (Latest stable version)
+- **React** (Latest stable version)
+- **Vite** (Latest stable version)
+- **shadcn-ui** (for quick and modern styling)
+- **Tailwind CSS** (for modern and responsive styling)
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9182a85c-a5dd-48c5-8ec1-2014221513d4) and start prompting.
+- 🌓 Light/Dark mode
+- 🌎 Multi-language support (English and Portuguese)
+- 📱 Responsive design
+- 🎨 Modern and elegant interface
+- 📄 Resume download in PDF
+- 🔗 GitHub integration
+- 💼 Navigable resume sections
 
-Changes made via Lovable will be committed automatically to this repo.
+## How to Run the Project
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (we recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) for installation)
+- npm (Node.js package manager)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Execution Steps
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone <REPOSITORY_URL>
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Enter the project directory
+cd modern-resume-vibe
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The project will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/     # Reusable components
+├── pages/         # Application pages
+├── context/       # React contexts
+├── hooks/         # Custom hooks
+├── utils/         # Utility functions
+└── lib/           # Configurations and libraries
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Commit Standards
 
-## What technologies are used for this project?
+We follow the Conventional Commits pattern to keep history organized:
 
-This project is built with .
+- `feat`: New feature
+- `fix`: Bug fix
+- `refactor`: Code refactoring
+- `docs`: Documentation update
+- `style`: Style changes
+- `test`: Adding or modifying tests
+- `chore`: Configuration file changes
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Example:
+```
+feat(auth): add Google authentication
+```
 
-## How can I deploy this project?
+## How to Contribute
 
-Simply open [Lovable](https://lovable.dev/projects/9182a85c-a5dd-48c5-8ec1-2014221513d4) and click on Share -> Publish.
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## I want to use a custom domain - is that possible?
+## Deployment
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+The project can be deployed on various platforms. We recommend:
+
+- Vercel
+- Netlify
+- GitHub Pages
+
+## License
+
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+Lucas Santos - [LinkedIn](https://www.linkedin.com/in/santos-lucas96dev/)
+
+Project Link: [GitHub](https://github.com/iFallenHunt)
+
+## Documentation
+
+- [Development Documentation](DEVELOPMENT.md)
+- [Portuguese Documentation](README-PTBR.md)
