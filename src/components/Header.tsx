@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import ThemeToggle from "./ThemeToggle";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +61,7 @@ const Header: React.FC = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "py-3 bg-white/80 backdrop-blur-lg shadow-sm"
+          ? "py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-sm"
           : "py-5 bg-transparent"
       )}
     >
@@ -74,7 +75,7 @@ const Header: React.FC = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:flex items-center">
             <ul className="flex items-center space-x-8">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -91,23 +92,29 @@ const Header: React.FC = () => {
                 </li>
               ))}
             </ul>
+            <div className="ml-6">
+              <ThemeToggle />
+            </div>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <ThemeToggle />
+            {/* Mobile Menu Button */}
+            <button
+              className="p-2 text-foreground"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-sm z-40 flex flex-col justify-center transition-all duration-300 md:hidden",
+          "fixed inset-0 bg-background/95 dark:bg-slate-900/95 backdrop-blur-sm z-40 flex flex-col justify-center transition-all duration-300 md:hidden",
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
