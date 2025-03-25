@@ -15,16 +15,15 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ className }) => {
   return (
     <Button
       variant="outline"
-      size="icon"
       onClick={toggleLanguage}
       className={cn(
-        "rounded-full bg-background/80 backdrop-blur-sm",
+        "rounded-full bg-background/80 backdrop-blur-sm px-3 h-10 flex items-center justify-center",
         className
       )}
       aria-label="Toggle language"
     >
       <Globe className="h-5 w-5 text-foreground" />
-      <span className="ml-2 sr-only md:not-sr-only md:ml-2 text-xs font-medium">
+      <span className="ml-1 text-xs font-medium">
         {language === "pt-BR" ? "EN" : "PT"}
       </span>
     </Button>
