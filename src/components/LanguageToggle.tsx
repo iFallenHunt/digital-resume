@@ -17,7 +17,7 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ className }) => {
       variant="outline"
       onClick={toggleLanguage}
       className={cn(
-        "rounded-full bg-background/80 backdrop-blur-sm px-3 h-10 flex items-center justify-center border-primary/20",
+        "rounded-full bg-background/80 backdrop-blur-sm px-3 h-10 flex items-center justify-center border-primary/20 dark:border-primary/40",
         className
       )}
       aria-label="Toggle language"
