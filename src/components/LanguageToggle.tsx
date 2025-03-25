@@ -17,13 +17,13 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ className }) => {
       variant="outline"
       onClick={toggleLanguage}
       className={cn(
-        "rounded-full bg-background/80 backdrop-blur-sm px-3 h-10 flex items-center justify-center",
+        "rounded-full bg-background/80 backdrop-blur-sm px-3 h-10 flex items-center justify-center border-primary/20",
         className
       )}
       aria-label="Toggle language"
     >
-      <Globe className="h-5 w-5 text-foreground" />
-      <span className="ml-1 text-xs font-medium">
+      <Globe className="h-5 w-5 text-foreground dark:text-primary" />
+      <span className="ml-1 text-xs font-medium dark:text-primary">
         {language === "pt-BR" ? "EN" : "PT"}
       </span>
     </Button>

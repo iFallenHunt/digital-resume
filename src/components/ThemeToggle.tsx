@@ -18,7 +18,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
       size="icon"
       onClick={toggleTheme}
       className={cn(
-        "rounded-full bg-background/80 backdrop-blur-sm",
+        "rounded-full bg-background/80 backdrop-blur-sm border-primary/20",
         className
       )}
       aria-label="Toggle theme"
@@ -26,7 +26,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
       {theme === "light" ? (
         <Moon className="h-5 w-5 text-foreground" />
       ) : (
-        <Sun className="h-5 w-5 text-foreground" />
+        <Sun className="h-5 w-5 text-primary" />
       )}
     </Button>
   );
