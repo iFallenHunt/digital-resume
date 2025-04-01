@@ -7,13 +7,13 @@
 @layer base {
   :root {
     --background: 220 33% 98%;
-    --foreground: 224 71.4% 4.1%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 0 0% 0%;
 
     --primary: 220 85% 57%;
     --primary-foreground: 210 40% 98%;
@@ -22,7 +22,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 220 14.3% 95.9%;
     --accent-foreground: 220 85% 57%;
@@ -32,7 +32,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+    --ring: 0 0% 0%;
 
     --radius: 0.75rem;
 
@@ -48,28 +48,28 @@
 
   .dark {
     --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    --foreground: 0 0% 98%;
 
     --card: 222 47% 7%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 222 47% 7%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 217.2 91.2% 69%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217 32% 17.5%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 217 32% 17.5%;
-    --muted-foreground: 215 20% 90%;
+    --muted-foreground: 0 0% 80%;
 
     --accent: 217 32% 17.5%;
-    --accent-foreground: 217.2 91.2% 69%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 217 32% 27%;
     --input: 217 32% 27%;
@@ -92,38 +92,38 @@ html {
 }
 
 body {
-  @apply bg-background text-foreground antialiased;
+  @apply bg-background text-black dark:text-white/90 antialiased;
   font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
 }
 
 .glass-card {
-  @apply bg-white/70 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
+  @apply bg-white/70 dark:bg-slate-900/90 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
 }
 
 .highlight-text {
-  @apply text-primary font-medium;
+  @apply text-primary font-medium dark:text-primary;
 }
 
 .section-heading {
-  @apply text-3xl md:text-4xl font-display font-bold mb-4 text-center relative;
+  @apply text-3xl md:text-4xl font-display font-bold mb-4 text-center relative text-black dark:text-[rgb(101,121,169)];
 }
 
 .section-heading::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-primary rounded-full;
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-primary rounded-full dark:bg-primary;
 }
 
 .skill-tag {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary;
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-white;
 }
 
 .timeline-card {
-  @apply relative p-6 glass-card;
+  @apply relative p-6 glass-card dark:bg-slate-900/90;
 }
 
 .timeline-card::before {
   content: '';
-  @apply absolute top-8 -left-3 w-6 h-6 rounded-full bg-primary shadow-md z-10;
+  @apply absolute top-8 -left-3 w-6 h-6 rounded-full bg-primary shadow-md z-10 dark:shadow-primary/30;
 }
 
 .animate-reveal {
@@ -165,20 +165,16 @@ body {
 }
 
 .nav-link {
-  @apply relative text-foreground/90 hover:text-foreground transition-colors duration-200;
+  @apply relative text-black/90 hover:text-black transition-colors duration-200 dark:text-white/90 dark:hover:text-white;
 }
 
 .nav-link::after {
   content: '';
-  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-in-out;
-}
-
-.nav-link:hover::after {
-  @apply w-full;
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-in-out dark:bg-primary;
 }
 
 .nav-link.active {
-  @apply text-primary font-medium;
+  @apply text-primary font-medium dark:text-primary;
 }
 
 .nav-link.active::after {
@@ -186,7 +182,7 @@ body {
 }
 
 .scroll-indicator {
-  @apply animate-bounce absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/80;
+  @apply animate-bounce absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/80 dark:text-primary;
 }
 
 @media (prefers-reduced-motion) {
@@ -206,4 +202,34 @@ body {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Ajuste adicional para textos gerais no modo escuro */
+.dark body {
+  @apply text-white/90;
+}
+
+.dark .text-foreground {
+  @apply text-white/90;
+}
+
+.dark .text-foreground\/80 {
+  @apply text-white/80;
+}
+
+.dark .text-muted-foreground {
+  @apply text-white/70;
+}
+
+/* Ajustes para texto no modo claro */
+.text-foreground {
+  @apply text-black dark:text-white/90;
+}
+
+.text-foreground\/80 {
+  @apply text-black/80 dark:text-white/80;
+}
+
+.text-muted-foreground {
+  @apply text-black/60 dark:text-white/70;
 }
