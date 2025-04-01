@@ -3,6 +3,8 @@ import React from "react";
 import AnimatedText from "./AnimatedText";
 import { Briefcase, Calendar, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
 
 interface ExperienceItemProps {
   title: string;
@@ -60,11 +62,12 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 };
 
 const Experience: React.FC = () => {
+  const { language } = useLanguage();
   return (
     <section id="experience" className="py-20 bg-section-pattern">
       <div className="container mx-auto px-4">
         <AnimatedText
-          text="Experiência Profissional"
+          text={getTranslation("experienceTitle", language)}
           className="section-heading"
         />
 
@@ -74,34 +77,27 @@ const Experience: React.FC = () => {
 
           <div className="space-y-10 relative">
             <ExperienceItem
-              title="Desenvolvedor Full Stack"
+              title={getTranslation("fullStackDev", language)}
               company="IT Brasil"
               period="Dez 2024 – Fev 2025"
               description={[
-                "Desenvolvimento de software",
-                "Python, HTML, CSS, JavaScript, Docker, Github",
-                "Comunicação com Stakeholders",
-                "Coordenação de Times Ágeis",
-                "Desenvolvimento e Revisão de Código",
-                "Suporte de Infraestrutura em Cloud",
-                "Análise e Otimização de Banco de Dados",
-                "Garantia de Qualidade e Integração Contínua"
+                getTranslation("experienceFullStackDesc1", language),
+                getTranslation("experienceFullStackDesc2", language),
+                getTranslation("experienceFullStackDesc3", language),
+                getTranslation("experienceFullStackDesc4", language),
               ]}
               delay={100}
             />
 
             <ExperienceItem
-              title="Desenvolvedor/Product Owner"
-              company="Empresa Não Especificada"
+              title={getTranslation("internDev", language)}
+              company="IT Brasil"
               period="Jun 2024 – Dez 2024"
               description={[
-                "Desenvolvimento de software",
-                "Python, HTML, CSS, JavaScript",
-                "Suporte N3",
-                "Metodologia Ágil",
-                "Suporte a Aplicação SAAS",
-                "Banco de Dados",
-                "Suporte a infraestrutura de nuvem"
+                getTranslation("experienceInternDesc1", language),
+                getTranslation("experienceInternDesc2", language),
+                getTranslation("experienceInternDesc3", language),
+                getTranslation("experienceInternDesc4", language),
               ]}
               delay={300}
             />
@@ -111,45 +107,36 @@ const Experience: React.FC = () => {
               company="Mercedes-Benz"
               period="Out 2022 – Jun 2024"
               description={[
-                "Análise de banco de dados",
-                "Troubleshooting em aplicações Java e Python",
-                "Administração de servidores",
-                "Monitoramento de performance e KPIs",
-                "Programação de rotina",
-                "Backup",
-                "Segurança de acesso",
-                "Power BI"
+                getTranslation("experienceSeniorSupportDesc1", language),
+                getTranslation("experienceSeniorSupportDesc2", language),
+                getTranslation("experienceSeniorSupportDesc3", language),
+                getTranslation("experienceSeniorSupportDesc4", language),
               ]}
               delay={500}
             />
 
             <ExperienceItem
-              title="Analista de Sistemas"
+              title={getTranslation("systemsAnalyst", language)}
               company="Sópneus"
               period="Mar 2022 - Jul 2022"
               description={[
-                "Realização de atividades rotineiras em servidores em nuvem",
-                "Troubleshooting em aplicações C# e Python",
-                "Identificação de bugs no ERP Sankhya",
-                "Banco de dados Oracle Cloud",
-                "Manutenção rotineira de hardware",
-                "Helpdesk",
-                "Criação de metodologias e documentação"
+                getTranslation("experienceSystemsAnalyst1Desc1", language),
+                getTranslation("experienceSystemsAnalyst1Desc2", language),
+                getTranslation("experienceSystemsAnalyst1Desc3", language),
+                getTranslation("experienceSystemsAnalyst1Desc4", language),
               ]}
               delay={700}
             />
 
             <ExperienceItem
-              title="Analista de Sistemas"
+              title={getTranslation("systemsAnalyst", language)}
               company="Visual Modas"
               period="Jun 2020 - Mar 2022"
               description={[
-                "Realização de atividades rotineiras em servidores físicos e em nuvem",
-                "Troubleshooting em aplicações C# e Python",
-                "Identificação de bugs no ERP Sankhya",
-                "Banco de dados Oracle físico e Cloud",
-                "Helpdesk",
-                "Criação de metodologias e documentação"
+                getTranslation("experienceSystemsAnalyst2Desc1", language),
+                getTranslation("experienceSystemsAnalyst2Desc2", language),
+                getTranslation("experienceSystemsAnalyst2Desc3", language),
+                getTranslation("experienceSystemsAnalyst2Desc4", language),
               ]}
               delay={900}
             />

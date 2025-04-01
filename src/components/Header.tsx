@@ -75,7 +75,7 @@ const Header: React.FC = () => {
             href="#home"
             className="font-display text-xl font-bold text-foreground"
           >
-            <span className="text-primary">CV</span> Interativo
+            <span className="text-primary">{getTranslation("cvInteractive", language)}</span> 
           </a>
 
           {/* Desktop Navigation */}
