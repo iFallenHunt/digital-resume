@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -65,7 +64,7 @@ const Header: React.FC = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-sm"
+          ? "py-3 bg-white/80 dark:bg-slate-900/90 backdrop-blur-lg shadow-sm dark:shadow-slate-900/20"
           : "py-5 bg-transparent"
       )}
     >

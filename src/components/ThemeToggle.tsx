@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +17,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
       size="icon"
       onClick={toggleTheme}
       className={cn(
-        "rounded-full bg-background/80 backdrop-blur-sm border-primary/20 dark:border-primary/40",
+        "rounded-full bg-background/80 backdrop-blur-sm border-primary/20 dark:border-primary/40 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors",
         className
       )}
       aria-label="Toggle theme"

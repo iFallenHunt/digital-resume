@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
         <div className="max-w-3xl mx-auto mt-8 mb-16">
           <AnimatedText
             text={getTranslation("contactDescription", language)}
-            className="text-center text-lg text-foreground/80"
+            className="text-center text-lg text-black"
           />
         </div>
 

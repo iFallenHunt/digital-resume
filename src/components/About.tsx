@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BookOpen, Briefcase, Coffee, Heart, Map, User, Mail, Phone, Globe, Github, Linkedin, MessageCircle } from "lucide-react";
 import AnimatedText from "./AnimatedText";
@@ -49,7 +48,7 @@ const About: React.FC = () => {
         <div className="max-w-3xl mx-auto mt-8 mb-16">
           <AnimatedText
             text={getTranslation("aboutDescription", language)}
-            className="text-center text-lg text-foreground/80"
+            className="text-center text-lg text-black [&>p]:mb-4 whitespace-pre-line"
           />
         </div>
 
