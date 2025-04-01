@@ -18,32 +18,32 @@ const Skills: React.FC = () => {
     {
       name: getTranslation("languagesFrameworks", language),
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "Java", level: 85 },
-        { name: "Python", level: 85 },
-        { name: "Golang", level: 75 },
-        { name: "React", level: 80 },
-        { name: "TypeScript", level: 80 }
+        { name: "JavaScript", level: 40 },
+        { name: "Java", level: 70 },
+        { name: "Python", level: 68 },
+        { name: "Golang", level: 30 },
+        { name: "React", level: 50 },
+        { name: "TypeScript", level: 50 }
       ],
     },
     {
       name: getTranslation("cloudDevOps", language),
       skills: [
-        { name: "AWS", level: 85 },
-        { name: "Azure", level: 80 },
-        { name: "Google Cloud", level: 75 },
-        { name: "Docker", level: 85 },
-        { name: "Github", level: 90 }
+        { name: "AWS", level: 60 },
+        { name: "Azure", level: 30 },
+        { name: "Google Cloud", level: 40 },
+        { name: "Docker", level: 70 },
+        { name: "Github", level: 80 }
       ],
     },
     {
       name: getTranslation("databasesOthers", language),
       skills: [
-        { name: "MySQL", level: 85 },
+        { name: "MySQL", level: 60 },
         { name: "PostgreSQL", level: 80 },
-        { name: "MariaDB", level: 80 },
-        { name: "Apache/Nginx", level: 75 },
-        { name: "Supabase/Vercel", level: 80 }
+        { name: "MariaDB", level: 50 },
+        { name: "Apache/Nginx", level: 50 },
+        { name: "Supabase/Vercel", level: 40 }
       ],
     },
   ];

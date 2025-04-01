@@ -48,8 +48,8 @@ const Hero: React.FC = () => {
               
               <AnimatedText
                 text={language === "pt-BR" 
-                  ? "Transformando ideias em soluções práticas e eficientes. Especializado em Java, Python e JavaScript com foco em desenvolvimento de software e Cloud Computing."
-                  : "Transforming ideas into practical and efficient solutions. Specialized in Java, Python, and JavaScript with a focus on software development and Cloud Computing."}
+                  ? "Transformando ideias em soluções práticas e eficientes. Focado em Java, Python e JavaScript com foco em desenvolvimento de software e Cloud Computing."
+                  : "Transforming ideas into practical and efficient solutions. Focused in Java, Python, and JavaScript with a focus on software development and Cloud Computing."}
                 className="max-w-2xl text-lg text-foreground/70"
                 delay={800}
               />

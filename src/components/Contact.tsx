@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
             <ContactInfoItem
               icon={<MapPin size={24} />}
               title="Localização"
-              content="Campinas, SP, Brasil"
+              content="Hortôlandia, SP, Brasil"
               delay={400}
             />
 

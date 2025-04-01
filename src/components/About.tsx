@@ -66,7 +66,7 @@ const About: React.FC = () => {
             <InfoCard
               icon={<Map size={24} />}
               title={getTranslation("location", language)}
-              content={`Campinas, SP, Brasil - ${getTranslation("hybridRemote", language)}`}
+              content={`Hortôlandia, SP, Brasil - ${getTranslation("hybridRemote", language)}`}
             />
           </div>
 
