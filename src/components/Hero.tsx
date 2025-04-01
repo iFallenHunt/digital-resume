@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import AnimatedText from "./AnimatedText";
@@ -84,7 +83,7 @@ const Hero: React.FC = () => {
                 <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white/50 shadow-xl animate-float">
                   {/* Profile image */}
                   <img 
-                    src="/lovable-uploads/6ee29a52-479e-4d61-be25-988ad6412a4b.png" 
+                    src="/images/profile.png" 
                     alt="Lucas Santos" 
                     className="w-full h-full object-cover"
                   />
