@@ -15,9 +15,9 @@
 This is an interactive resume project developed with modern technologies to provide a unique professional information viewing experience. Built with performance, accessibility, and user experience in mind, it offers a modern and elegant way to showcase your professional journey.
 
 ### ✨ Live Demo
-Visit the live demo at: [Modern Resume Vibe](https://modern-resume-vibe.vercel.app)
+Visit the live demo at: [Digital Resume](https://digital-resume.vercel.app)
 
-## 🚀 Technologies Used
+## �� Technologies Used
 
 - **TypeScript** ^5.2.2 - For type-safe code
 - **React** ^18.2.0 - For building the user interface
@@ -55,10 +55,10 @@ Visit the live demo at: [Modern Resume Vibe](https://modern-resume-vibe.vercel.a
 
 ```bash
 # Clone the repository
-git clone https://github.com/iFallenHunt/modern-resume-vibe.git
+git clone https://github.com/iFallenHunt/digital-resume.git
 
 # Enter the project directory
-cd modern-resume-vibe
+cd digital-resume
 
 # Install dependencies
 npm install
@@ -82,7 +82,7 @@ npm run format   # Format code with Prettier
 ## 📁 Project Structure
 
 ```
-modern-resume-vibe/
+digital-resume/
 ├── src/
 │   ├── components/     # Reusable UI components
 │   ├── pages/         # Application pages

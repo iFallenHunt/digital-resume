@@ -15,7 +15,7 @@
 Este é um projeto de currículo interativo desenvolvido com tecnologias modernas para proporcionar uma experiência única de visualização de informações profissionais. Construído com foco em performance, acessibilidade e experiência do usuário, oferece uma maneira moderna e elegante de apresentar sua jornada profissional.
 
 ### ✨ Demonstração
-Acesse a demonstração em: [Modern Resume Vibe](https://modern-resume-vibe.vercel.app)
+Acesse a demonstração em: [Digital Resume](https://digital-resume.vercel.app)
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -55,10 +55,10 @@ Acesse a demonstração em: [Modern Resume Vibe](https://modern-resume-vibe.verc
 
 ```bash
 # Clone o repositório
-git clone https://github.com/iFallenHunt/modern-resume-vibe.git
+git clone https://github.com/iFallenHunt/digital-resume.git
 
 # Entre no diretório do projeto
-cd modern-resume-vibe
+cd digital-resume
 
 # Instale as dependências
 npm install
