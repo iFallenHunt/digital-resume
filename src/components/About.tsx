@@ -1,6 +1,6 @@
 
 import React from "react";
-import { BookOpen, Briefcase, Coffee, Heart, Map, User, Mail, Phone, Globe, Github, Linkedin } from "lucide-react";
+import { BookOpen, Briefcase, Coffee, Heart, Map, User, Mail, Phone, Globe, Github, Linkedin, MessageCircle } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
@@ -72,9 +72,18 @@ const About: React.FC = () => {
 
           <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
             <InfoCard
-              icon={<Phone size={24} />}
+              icon={<MessageCircle size={24} />}
               title={getTranslation("phone", language)}
-              content="+55 (16) 9 8108-0083"
+              content={
+                <a
+                  href="https://wa.me/+5516981080083"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  +55 (16) 9 8108-0083
+                </a>
+              }
             />
           </div>
 

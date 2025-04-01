@@ -1,12 +1,14 @@
-
 import React, { useState } from "react";
 import AnimatedText from "./AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Globe, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/utils/translations";
+import emailjs from '@emailjs/browser';
 
 interface ContactInfoItemProps {
   icon: React.ReactNode;
@@ -33,6 +35,7 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({
 );
 
 const Contact: React.FC = () => {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,31 +49,46 @@ const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("Mensagem enviada com sucesso!");
+    try {
+      await emailjs.send(
+        'service_j2nspje', // Substitua pelo seu Service ID do EmailJS
+        'template_p3rljko', // Substitua pelo seu Template ID do EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'ZLwHlexl7HjgVtVod' // Substitua pela sua Public Key do EmailJS
+      );
+
+      toast.success(getTranslation("messageSent", language));
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      toast.error(language === "pt-BR" ? "Erro ao enviar mensagem. Tente novamente." : "Error sending message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-cta-pattern">
       <div className="container mx-auto px-4">
-        <AnimatedText text="Entre em Contato" className="section-heading" />
+        <AnimatedText text={getTranslation("contactIntro", language)} className="section-heading" />
 
         <div className="max-w-3xl mx-auto mt-8 mb-16">
           <AnimatedText
-            text="Tem um projeto em mente ou gostaria de bater um papo? Fique à vontade para entrar em contato comigo usando o formulário abaixo ou através dos meus contatos."
+            text={getTranslation("contactDescription", language)}
             className="text-center text-lg text-foreground/80"
           />
         </div>
@@ -78,14 +96,14 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="glass-card p-8">
             <AnimatedText
-              text="Informações de Contato"
+              text={getTranslation("personalInfo", language)}
               className="text-2xl font-display font-semibold mb-6"
               delay={100}
             />
 
             <ContactInfoItem
               icon={<Mail size={24} />}
-              title="Email"
+              title={getTranslation("email", language)}
               content={
                 <a
                   href="mailto:lukas_santos.silva@hotmail.com"
@@ -99,20 +117,33 @@ const Contact: React.FC = () => {
 
             <ContactInfoItem
               icon={<Phone size={24} />}
-              title="Telefone"
-              content="+55 (16) 9 8108-0083"
+              title={getTranslation("phone", language)}
+              content={
+                <div className="flex items-center gap-2">
+                  <span>+55 (16) 9 8108-0083</span>
+                  <a
+                    href="https://wa.me/+5516981080083"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2 py-1 text-sm bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors"
+                  >
+                    <MessageCircle size={14} />
+                    WhatsApp
+                  </a>
+                </div>
+              }
               delay={300}
             />
 
             <ContactInfoItem
               icon={<MapPin size={24} />}
-              title="Localização"
+              title={getTranslation("location", language)}
               content="Hortôlandia, SP, Brasil"
               delay={400}
             />
 
             <div className="mt-10 animate-fade-in" style={{ animationDelay: '500ms' }}>
-              <h3 className="text-base font-medium mb-4">Me siga nas redes</h3>
+              <h3 className="text-base font-medium mb-4">{getTranslation("followMe", language)}</h3>
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/iFallenHunt"
@@ -138,7 +169,7 @@ const Contact: React.FC = () => {
 
           <div className="glass-card p-8">
             <AnimatedText
-              text="Envie uma Mensagem"
+              text={getTranslation("sendMessage", language)}
               className="text-2xl font-display font-semibold mb-6"
               delay={100}
             />
@@ -148,12 +179,12 @@ const Contact: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 animate-fade-in" style={{ animationDelay: '200ms' }}>
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
-                      Nome
+                      {getTranslation("name", language)}
                     </label>
                     <Input
                       id="name"
                       name="name"
-                      placeholder="Seu nome"
+                      placeholder={getTranslation("yourName", language)}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -162,13 +193,13 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">
-                      Email
+                      {getTranslation("email", language)}
                     </label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Seu email"
+                      placeholder={getTranslation("yourEmail", language)}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -179,12 +210,12 @@ const Contact: React.FC = () => {
 
                 <div className="space-y-2 animate-fade-in" style={{ animationDelay: '300ms' }}>
                   <label htmlFor="subject" className="text-sm font-medium">
-                    Assunto
+                    {getTranslation("subject", language)}
                   </label>
                   <Input
                     id="subject"
                     name="subject"
-                    placeholder="Assunto da mensagem"
+                    placeholder={getTranslation("messageSubject", language)}
                     value={formData.subject}
                     onChange={handleChange}
                     required
@@ -194,12 +225,12 @@ const Contact: React.FC = () => {
 
                 <div className="space-y-2 animate-fade-in" style={{ animationDelay: '400ms' }}>
                   <label htmlFor="message" className="text-sm font-medium">
-                    Mensagem
+                    {getTranslation("message", language)}
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Sua mensagem"
+                    placeholder={getTranslation("yourMessage", language)}
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
@@ -215,10 +246,10 @@ const Contact: React.FC = () => {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Enviando..."
+                      getTranslation("sending", language)
                     ) : (
                       <>
-                        Enviar Mensagem <Send size={16} className="ml-2" />
+                        {getTranslation("sendMessage", language)} <Send size={16} className="ml-2" />
                       </>
                     )}
                   </Button>
