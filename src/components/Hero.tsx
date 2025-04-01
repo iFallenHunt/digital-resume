@@ -55,9 +55,14 @@ const Hero: React.FC = () => {
               
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
                 <div className="animate-fade-in" style={{ animationDelay: '1000ms' }}>
-                  <Button size="lg" className="rounded-full px-8">
-                    {getTranslation("downloadCV", language)}
-                  </Button>
+                  <a 
+                    href={language === "pt-BR" ? "/assets/Curriculo.pdf" : "/assets/Resume.pdf"} 
+                    download={language === "pt-BR" ? "Curriculo.pdf" : "Resume.pdf"}
+                  >
+                    <Button size="lg" className="rounded-full px-8">
+                      {getTranslation("downloadCV", language)}
+                    </Button>
+                  </a>
                 </div>
                 
                 <div className="animate-fade-in" style={{ animationDelay: '1200ms' }}>
