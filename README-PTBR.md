@@ -1,39 +1,61 @@
 # Currículo Interativo
 
-## Sobre o Projeto
+<div align="center">
 
-Este é um projeto de currículo interativo desenvolvido com tecnologias modernas para proporcionar uma experiência única de visualização de informações profissionais.
+![Versão](https://img.shields.io/badge/versão-0.2.0-blue.svg?cacheSeconds=2592000)
+[![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## Tecnologias Utilizadas
+</div>
 
-- **TypeScript** (Última versão estável)
-- **React** (Última versão estável)
-- **Vite** (Última versão estável)
-- **shadcn-ui** (para estilização rápida e moderna)
-- **Tailwind CSS** (para estilização moderna e responsiva)
+## 🌟 Sobre o Projeto
 
-## Funcionalidades
+Este é um projeto de currículo interativo desenvolvido com tecnologias modernas para proporcionar uma experiência única de visualização de informações profissionais. Construído com foco em performance, acessibilidade e experiência do usuário, oferece uma maneira moderna e elegante de apresentar sua jornada profissional.
 
-- 🌓 Modo claro/escuro
+### ✨ Demonstração
+Acesse a demonstração em: [Modern Resume Vibe](https://modern-resume-vibe.vercel.app)
+
+## 🚀 Tecnologias Utilizadas
+
+- **TypeScript** ^5.2.2 - Para código com tipagem segura
+- **React** ^18.2.0 - Para construção da interface do usuário
+- **Vite** ^5.1.4 - Para desenvolvimento e build rápidos
+- **shadcn-ui** - Para componentes modernos e acessíveis
+- **Tailwind CSS** ^3.4.1 - Para estilização moderna e responsiva
+- **i18next** ^23.10.0 - Para internacionalização
+- **framer-motion** ^11.0.8 - Para animações suaves
+- **react-icons** ^5.0.1 - Para ícones bonitos
+- **emailjs** ^4.1.0 - Para funcionalidade do formulário de contato
+
+## 🎯 Funcionalidades
+
+- 🌓 Modo claro/escuro com detecção de preferência do sistema
 - 🌎 Suporte para múltiplos idiomas (Português e Inglês)
-- 📱 Design responsivo
-- 🎨 Interface moderna e elegante
-- 📄 Download do currículo em PDF
-- 🔗 Integração com GitHub
-- 💼 Seções navegáveis do currículo
+- 📱 Design totalmente responsivo para todos os dispositivos
+- 🎨 Interface moderna e elegante com animações suaves
+- 📄 Download do currículo em formato PDF
+- 🔗 Integração com GitHub (em breve)
+- 💼 Seções navegáveis com rolagem suave
+- 📬 Formulário de contato com integração de email
+- ♿ Recursos de acessibilidade (WCAG 2.1 Nível AA)
+- 🚀 Performance otimizada (pontuação Lighthouse > 90)
+- 🎭 Belas animações e transições
 
-## Como Executar o Projeto
+## 🛠️ Como Executar o Projeto
 
 ### Pré-requisitos
 
-- Node.js (recomendamos usar o [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) para instalação)
-- npm (gerenciador de pacotes do Node.js)
+- Node.js >= 18.0.0
+- npm >= 9.0.0
+- Git >= 2.30.0
 
-### Passos para Execução
+### Instalação e Configuração
 
 ```bash
 # Clone o repositório
-git clone <URL_DO_REPOSITÓRIO>
+git clone https://github.com/iFallenHunt/modern-resume-vibe.git
 
 # Entre no diretório do projeto
 cd modern-resume-vibe
@@ -47,21 +69,37 @@ npm run dev
 
 O projeto estará disponível em `http://localhost:5173`
 
-## Estrutura do Projeto
+### Scripts Disponíveis
 
-```
-src/
-├── components/     # Componentes reutilizáveis
-├── pages/         # Páginas da aplicação
-├── context/       # Contextos do React
-├── hooks/         # Hooks personalizados
-├── utils/         # Funções utilitárias
-└── lib/           # Configurações e bibliotecas
+```bash
+npm run dev      # Inicia servidor de desenvolvimento
+npm run build    # Build para produção
+npm run preview  # Preview do build de produção
+npm run lint     # Executa ESLint
+npm run format   # Formata código com Prettier
 ```
 
-## Padrões de Commit
+## 📁 Estrutura do Projeto
 
-Seguimos o padrão Conventional Commits para manter o histórico organizado:
+```
+modern-resume-vibe/
+├── src/
+│   ├── components/     # Componentes UI reutilizáveis
+│   ├── pages/         # Páginas da aplicação
+│   ├── context/       # Contextos React (tema, idioma)
+│   ├── hooks/         # Hooks React personalizados
+│   ├── utils/         # Funções utilitárias
+│   ├── lib/           # Configurações e constantes
+│   ├── types/         # Definições de tipos TypeScript
+│   ├── i18n/          # Arquivos de internacionalização
+│   └── styles/        # Estilos globais e config Tailwind
+├── public/           # Arquivos estáticos
+└── dist/            # Output do build de produção
+```
+
+## 📝 Padrões de Commit
+
+Seguimos o padrão Conventional Commits:
 
 - `feat`: Nova funcionalidade
 - `fix`: Correção de bug
@@ -69,35 +107,73 @@ Seguimos o padrão Conventional Commits para manter o histórico organizado:
 - `docs`: Atualização de documentação
 - `style`: Alterações de estilo
 - `test`: Adição ou modificação de testes
-- `chore`: Alterações em arquivos de configuração
+- `chore`: Alterações de configuração
 
 Exemplo:
 ```
-feat(auth): adiciona autenticação com Google
+feat(i18n): adiciona componente de troca de idioma
 ```
 
-## Como Contribuir
+## 🤝 Como Contribuir
 
 1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Faça commit das suas alterações (`git commit -m 'feat: Add some AmazingFeature'`)
-4. Faça push para a branch (`git push origin feature/AmazingFeature`)
+2. Crie sua branch de feature (`git checkout -b feature/RecursoIncrivel`)
+3. Faça commit das suas alterações (`git commit -m 'feat: Adiciona algum RecursoIncrivel'`)
+4. Faça push para a branch (`git push origin feature/RecursoIncrivel`)
 5. Abra um Pull Request
 
-## Deploy
+### Guia de Estilo de Código
 
-O projeto pode ser implantado em várias plataformas. Recomendamos:
+- Use TypeScript para todo código novo
+- Siga as configurações do ESLint e Prettier
+- Escreva mensagens de commit significativas seguindo Conventional Commits
+- Adicione comentários JSDoc para funções e componentes
+- Mantenha cobertura de testes para novas funcionalidades
 
-- Vercel
-- Netlify
-- GitHub Pages
+## 🚀 Deploy
 
-## Licença
+O projeto está configurado para fácil implantação em várias plataformas:
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+- **Vercel**: Recomendado para melhor performance e configuração fácil
+- **Netlify**: Ótima alternativa com recursos similares
+- **GitHub Pages**: Bom para projetos pessoais
 
-## Contato
+### Variáveis de Ambiente
 
-Lucas Santos - [LinkedIn](https://www.linkedin.com/in/santos-lucas96dev/)
+```env
+VITE_EMAILJS_SERVICE_ID=seu_service_id
+VITE_EMAILJS_TEMPLATE_ID=seu_template_id
+VITE_EMAILJS_PUBLIC_KEY=sua_public_key
+```
 
-Link do Projeto: [GitHub](https://github.com/iFallenHunt) 
+## 📈 Performance
+
+- Pontuação Lighthouse > 90
+- First Contentful Paint < 1.5s
+- Time to Interactive < 3.5s
+- Tamanho do bundle otimizado
+- Carregamento lazy para imagens e componentes
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 📞 Contato
+
+Lucas Santos
+- LinkedIn: [santos-lucas96dev](https://www.linkedin.com/in/santos-lucas96dev/)
+- GitHub: [iFallenHunt](https://github.com/iFallenHunt)
+- Email: lucas.santos.dev96@gmail.com
+
+## 📚 Documentação
+
+- [Documentação de Desenvolvimento](DEVELOPMENT.md)
+- [English Documentation](README.md)
+
+## 🙏 Agradecimentos
+
+- [Documentação React](https://react.dev)
+- [Vite](https://vitejs.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [shadcn/ui](https://ui.shadcn.com)
+- [EmailJS](https://www.emailjs.com) 
