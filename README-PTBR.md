@@ -82,7 +82,7 @@ npm run format   # Formata código com Prettier
 ## 📁 Estrutura do Projeto
 
 ```
-modern-resume-vibe/
+digital-resume/
 ├── src/
 │   ├── components/     # Componentes UI reutilizáveis
 │   ├── pages/         # Páginas da aplicação
