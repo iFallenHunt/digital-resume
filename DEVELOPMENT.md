@@ -2,31 +2,48 @@
 
 Este arquivo mantém o registro de todas as melhorias e desenvolvimentos realizados no projeto.
 
-## 🚀 Versão Atual: 0.1.0
+## 🚀 Versão Atual: 0.2.0
 
 ## 📋 Backlog
 
 ### Alta Prioridade
-- [ ] Implementar sistema de internacionalização (i18n)
-- [ ] Configurar modo claro/escuro
-- [ ] Criar componente de download do CV em PDF
+- [x] Implementar sistema de internacionalização (i18n)
+- [x] Configurar modo claro/escuro
+- [x] Criar componente de download do CV em PDF
 - [ ] Implementar integração com API do GitHub
 - [ ] Adicionar testes unitários
 
 ### Média Prioridade
-- [ ] Melhorar acessibilidade (WCAG)
-- [ ] Otimizar performance (Lighthouse)
-- [ ] Adicionar animações de transição
+- [x] Melhorar acessibilidade (WCAG) - Parcialmente implementado
+- [x] Otimizar performance (Lighthouse) - Parcialmente implementado
+- [x] Adicionar animações de transição
 - [ ] Implementar PWA
-- [ ] Configurar SEO
+- [x] Configurar SEO - Parcialmente implementado
 
 ### Baixa Prioridade
-- [ ] Adicionar mais temas de cores
+- [x] Adicionar mais temas de cores
 - [ ] Implementar modo offline
 - [ ] Criar página de estatísticas
-- [ ] Adicionar mais opções de exportação do CV
+- [x] Adicionar mais opções de exportação do CV
 
 ## 📝 Changelog
+
+### [0.2.0] - 2024-03-XX
+#### Adicionado
+- Sistema de internacionalização (PT-BR e EN)
+- Modo claro/escuro com melhor contraste
+- Download do CV em diferentes idiomas
+- Animações de transição e efeitos visuais
+- Melhorias na acessibilidade e SEO
+- Temas de cores e personalização visual
+- Formulário de contato funcional com EmailJS
+
+#### Modificado
+- Ajustes no contraste do modo escuro
+- Melhorias na responsividade
+- Otimização de performance
+- Refatoração de componentes
+- Melhorias na organização do código
 
 ### [0.1.0] - 2024-03-05
 #### Adicionado
@@ -65,7 +82,7 @@ Este arquivo mantém o registro de todas as melhorias e desenvolvimentos realiza
 ## 🧪 Testes
 
 ### Tipos de Testes
-- Unitários: Jest + React Testing Library
+- Unitários: Jest + React Testing Library (Pendente)
 - E2E: Cypress (planejado)
 - Integração: Jest (planejado)
 
@@ -79,14 +96,14 @@ Meta de cobertura: 80%
 ## 📈 Métricas de Qualidade
 
 ### Performance
-- [ ] Lighthouse Score > 90
-- [ ] First Contentful Paint < 1.5s
-- [ ] Time to Interactive < 3.5s
+- [x] Lighthouse Score > 90 - Parcialmente alcançado
+- [x] First Contentful Paint < 1.5s
+- [x] Time to Interactive < 3.5s
 
 ### Acessibilidade
-- [ ] WCAG 2.1 Level AA
-- [ ] Suporte a leitores de tela
-- [ ] Navegação por teclado
+- [x] WCAG 2.1 Level AA - Parcialmente implementado
+- [x] Suporte a leitores de tela
+- [x] Navegação por teclado
 
 ## 🔧 Ambiente de Desenvolvimento
 

@@ -163,7 +163,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 Lucas Santos
 - LinkedIn: [santos-lucas96dev](https://www.linkedin.com/in/santos-lucas96dev/)
 - GitHub: [iFallenHunt](https://github.com/iFallenHunt)
-- Email: lucas.santos.dev96@gmail.com
 
 ## 📚 Documentação
 
