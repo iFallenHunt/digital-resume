@@ -1,6 +1,9 @@
-# Currículo Interativo
+# Curriculo Interativo
 
 <div align="center">
+
+[![English](https://img.shields.io/badge/🇺🇸_English-0077B5?style=flat-square&logo=readme&logoColor=white)](README.md)
+
 
 ![Versão](https://img.shields.io/badge/versão-0.2.0-blue.svg?cacheSeconds=2592000)
 [![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](#)
@@ -167,12 +170,4 @@ Lucas Santos
 ## 📚 Documentação
 
 - [Documentação de Desenvolvimento](DEVELOPMENT.md)
-- [English Documentation](README.md)
-
-## 🙏 Agradecimentos
-
-- [Documentação React](https://react.dev)
-- [Vite](https://vitejs.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [shadcn/ui](https://ui.shadcn.com)
-- [EmailJS](https://www.emailjs.com) 
+- [English Documentation](README.md) 

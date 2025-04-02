@@ -1,6 +1,8 @@
 # Interactive Resume
-
 <div align="center">
+
+[![Português](https://img.shields.io/badge/🇧🇷_Português-0077B5?style=flat-square&logo=readme&logoColor=white)](README-PTBR.md)
+
 
 ![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
