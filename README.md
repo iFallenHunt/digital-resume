@@ -17,7 +17,7 @@ This is an interactive resume project developed with modern technologies to prov
 ### ✨ Live Demo
 Visit the live demo at: [Digital Resume](https://digital-resume.vercel.app)
 
-## �� Technologies Used
+## 🚀 Technologies Used
 
 - **TypeScript** ^5.2.2 - For type-safe code
 - **React** ^18.2.0 - For building the user interface
