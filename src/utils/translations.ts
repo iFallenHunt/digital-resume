@@ -209,8 +209,8 @@ export const translations: Record<TranslationKey, { "pt-BR": string; en: string 
     en: "Contact"
   },
   downloadCV: {
-    "pt-BR": "Baixar CV",
-    en: "Download CV"
+    "pt-BR": "Baixar Curriculo",
+    en: "Download Resume"
   },
   cvInteractive: {
     "pt-BR": "Curriculo Interativo",
