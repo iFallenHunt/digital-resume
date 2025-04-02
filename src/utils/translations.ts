@@ -115,26 +115,26 @@ export const translations: Record<TranslationKey, { "pt-BR": string; en: string 
 
   // Intern
   experienceInternDesc1: {
-    "pt-BR": "Na Mercedes-Benz, o principal desafio era automatizar processos manuais relacionados à importação e exportação de dados, que eram feitos principalmente no Access. Isso tomava muito tempo e limitava a produtividade da equipe.",
-    en: "At Mercedes-Benz, the main challenge was to automate manual processes related to data import and export, which were mainly done in Access. This was time-consuming and limited team productivity."
+    "pt-BR": "Entrei na IT Brasil como estagiário para aliviar a carga da equipe de desenvolvimento. Logo depois, assumi a função de Product Owner, coordenando projetos importantes e lidando diretamente com clientes, até ser promovido a Desenvolvedor Full Stack.",
+    en: "I joined IT Brasil as an intern to lighten the load on the development team. Soon after, I took on the role of Product Owner, coordinating important projects and dealing directly with clients, until I was promoted to Full Stack Developer."
   },
   experienceInternDesc2: {
-    "pt-BR": "Desenvolver automações, aprimorar consultas SQL, gerenciar backups e produzir relatórios detalhados usando ferramentas de BI para um controle mais eficiente dos KPIs.",
-    en: "Develop automations, improve SQL queries, manage backups, and produce detailed reports using BI tools for more efficient KPI control."
+    "pt-BR": "Coordenei dois grandes projetos de implantação, mantendo contato direto com os clientes e trabalhando junto com a equipe de desenvolvimento para implementar melhorias e corrigir problemas.",
+    en: "I coordinated two major implementation projects, maintaining direct contact with clients and working closely with the development team to implement improvements and correct problems."
   },
   experienceInternDesc3: {
-    "pt-BR": "Usei Python para automações, SQL para otimizar consultas e Java para implementar rotinas de backup. Também fiz análises com debugers e criei relatórios mais precisos e ágeis com ferramentas de BI.",
-    en: "I used Python for automations, SQL to optimize queries, and Java to implement backup routines. I also performed analyses with debuggers and created more accurate and agile reports using BI tools."
+    "pt-BR": "Utilizei metodologias ágeis (Scrum e Kanban), desenvolvi com Python, HTML, CSS, JavaScript, GitHub para versionamento e conteinerização com Docker. Participei das sprints organizadas pelo Scrum Master, priorizando tarefas e apresentando resultados e entregas diretamente aos clientes.",
+    en: "I used agile methodologies (Scrum and Kanban), developed with Python, HTML, CSS, JavaScript, GitHub for versioning and containerization with Docker. I took part in sprints organized by the Scrum Master, prioritizing tasks and presenting results and deliverables directly to clients."
   },
   experienceInternDesc4: {
-    "pt-BR": "Consegui reduzir tarefas que levavam semanas para serem concluídas para apenas um dia, liberando a equipe para trabalhar em atividades mais estratégicas.",
-    en: "I managed to reduce tasks that took weeks to complete to just one day, freeing up the team to work on more strategic activities."
+    "pt-BR": "Com o aumento da equipe de 2 para 5 desenvolvedores e um contato mais próximo com os clientes, conseguimos entregar projetos mais rápido e com maior qualidade, garantindo satisfação e confiança dos stakeholders.",
+    en: "With the increase in the team from 2 to 5 developers and closer contact with clients, we were able to deliver projects faster and with higher quality, ensuring stakeholder satisfaction and trust."
   },
 
   // Senior Support Analyst
   experienceSeniorSupportDesc1: {
-    "pt-BR": "Contratado para assumir toda a parte de TI da Sópneus, meu objetivo era implementar melhorias em processos, segurança de rede e infraestrutura geral, além de reduzir custos e garantir o bom funcionamento dos sistemas.",
-    en: "Hired to take over all IT operations at Sópneus, my goal was to implement improvements in processes, network security, and general infrastructure, while reducing costs and ensuring proper system operation."
+    "pt-BR": "Na Mercedes-Benz, o principal desafio era automatizar processos manuais relacionados à importação e exportação de dados, que eram feitos principalmente no Access. Isso tomava muito tempo e limitava a produtividade da equipe.",
+    en: "At Mercedes-Benz, the main challenge was to automate manual processes related to importing and exporting data, which were mainly done in Access. This took up a lot of time and limited the team's productivity."
   },
   experienceSeniorSupportDesc2: {
     "pt-BR": "Desenvolver automações, aprimorar consultas SQL, gerenciar backups e produzir relatórios detalhados usando ferramentas de BI para um controle mais eficiente dos KPIs.",
