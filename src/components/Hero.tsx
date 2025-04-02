@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                 />
                 <AnimatedText
                   text={getTranslation("fullStackDev", language)}
-                  className="block text-2xl md:text-3xl lg:text-4xl mt-2 text-secondary"
+                  className="block text-2xl md:text-3xl lg:text-4xl mt-2 text-foreground/90 animate-shimmer"
                   delay={600}
                 />
               </h1>
